@@ -106,4 +106,5 @@ git push -u origin main
 -- remote update
 git pull -- to syncup local with remote
 
--- feat-branch to test merge
+-- first merge branch with the local main
+-- then git push to sync local main to remote main (origin/main)
