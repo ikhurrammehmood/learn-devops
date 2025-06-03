@@ -104,3 +104,4 @@ git push -u origin main
 
 --kupdates local to remote using cli
 -- remote update
+git pull -- to syncup local with remote
