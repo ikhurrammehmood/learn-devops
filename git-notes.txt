@@ -1,0 +1,87 @@
+-- Git Setup
+-------------------------------------------------------
+After installing Git, you can also configure it - most importantly, you can set a username and email address that will be connected to all your code snapshots.
+
+This can be done via:
+
+git config --global user.name "your-username"
+git config --global user.email "your-email"
+You can learn more about Git's configuration options here: https://git-scm.com/docs/git-config
+
+
+------------------ GIT Initialization ------------------
+------------------ local repo - offline------------------
+
+
+git init requires once per projects
+
+git log
+git status
+git add 'files'
+git commit -m 'some message , e.g initial load'
+
+HEAD->MAIN refers to the commit currently loaded
+
+you can move to another commit by running this command so that head points to that commit temporarily
+
+git checkout 'commid'
+
+
+revert changes in a commit , this basically doesnt delete the old commit instead undo changes under a new commit.
+This looks less usefull for undoing a small change but in a complex projects where changes need to revert from multiple files this is much simpler
+and straight forward.
+
+git revert 'commitid'
+
+
+
+deleting a commit
+git reset -- hard 'commit id'
+
+this will remove all commit history from commit id onwards permanently.
+.gitignore
+add this file to maintain a list of files and folder you dont want to commit
+then - add files / folder
+
+by git add .
+git commit -m 'add all'
+
+---------------------------------- GIT BRANCHES------------------------
+-----------------------------------------------------------------------
+this creates a new branch
+git branch <name>
+
+git branch -- list of all the branches
+
+git checkout <branch name>
+git comit
+
+git merge <name>
+
+
+delete a branch
+-------------------
+git branch -D <name>
+
+
+create and checkout together
+---------------------------
+git checkout -b <name>
+
+
+
+----------------------- GIT Remote Repositry linked with Local Repositry -------------------------
+First create a remote GIT HUB thorugh web UI - manually ------------------------
+
+remote : https://github.com/ikhurrammehmood/Learning-learn-git-devops.git
+local : anyname e.g origin
+
+
+git remote add origin https://github.com/ikhurrammehmood/Learning-learn-git-devops.git
+
+** here we are linking local repo origin with the remote repo 
+
+git remote set-url origin https://ikhurrammehmood@github.com/ikhurrammehmood/Learning-learn-git-devops.git
+git remote add
+git push
+git pull
