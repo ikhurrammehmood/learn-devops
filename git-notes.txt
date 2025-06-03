@@ -103,3 +103,4 @@ git branch -M main
 git push -u origin main
 
 --kupdates local to remote using cli
+-- remote update
