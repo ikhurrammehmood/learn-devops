@@ -101,3 +101,5 @@ git push -u origin main
 git remote add origin https://github.com/ikhurrammehmood/learn-devops.git
 git branch -M main
 git push -u origin main
+
+--kupdates local to remote using cli
