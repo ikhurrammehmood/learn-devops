@@ -85,3 +85,13 @@ git remote set-url origin https://ikhurrammehmood@github.com/ikhurrammehmood/Lea
 git remote add
 git push
 git pull
+
+----------------Example code
+----------------------------
+
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/ikhurrammehmood/learn-devops.git
+git push -u origin main
