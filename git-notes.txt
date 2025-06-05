@@ -108,6 +108,10 @@ git pull -- to syncup local with remote
 
 -- first merge branch with the local main
 -- then git push to sync local main to remote main (origin/main)
+----------------------git clone
 -----------------------------------------------------------------------
 git remote get-url origin
-this will return the link of the remote repo linked to origin
+-- this will return the link of the remote repo linked to origin
+
+git clone https://github.com/ikhurrammehmood/learn-devops.git
+
