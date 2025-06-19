@@ -12,3 +12,5 @@ jobs:
       uses: actions/setup-node@v3 #uses keyword is to when we have to use an action , run is when to run a command or script
       with:
         note-version:'18'
+- name : install dependencies
+  run : npm ci
