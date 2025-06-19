@@ -7,7 +7,7 @@ jobs:
     runs-on:ubuntu-latest
     steps:
     - name: Get code
-      uses: actions/checkout@v3 #here restricting to a specific version of actions checkout ; search online github runners
+      uses: actions/checkout@v3 #here this is an action identifierrestricting to a specific version of actions checkout ; search online github runners
     - name: Install NodeJS
       uses: actions/setup-node@v3 #uses keyword is to when we have to use an action , run is when to run a command or script
       with:
