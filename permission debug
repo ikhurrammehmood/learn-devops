@@ -1,0 +1,46 @@
+The error message "Permission to GavinReid82/gitPractice.git denied to GavinReid82" typically indicates that there's an authentication problem.
+
+Here are steps to troubleshoot and resolve this issue:
+
+Generate a Personal Access Token (PAT):
+Ensure that you have generated a new personal access token from GitHub. Follow these steps if you haven't done this yet:
+
+Go to your GitHub Settings.
+Navigate to Developer settings > Personal access tokens.
+Click on Generate new token.
+Select the necessary scopes, such as repo for full control of private repositories.
+Copy the generated token.
+Update Git Credentials:
+Use the token as your password when performing Git operations that require authentication.
+
+Open your terminal and run the following command to set the token as your credential:
+git config --global credential.helper store
+Then, try to push again. When prompted for a username, use your GitHub username. For the password, use the personal access token.
+Clear Previous Credentials:
+If you previously stored credentials that might be incorrect, you can clear them and re-enter the correct credentials.
+
+On macOS, you can clear stored GitHub credentials using the following command:
+git credential-osxkeychain erase
+When prompted, enter the following:
+protocol=https
+host=github.com
+Use HTTPS with the Token:
+Ensure that your GitHub repository URL is set to use HTTPS:
+
+Check your remote URL:
+git remote -v
+If it shows an SSH URL, you need to change it to HTTPS:
+git remote set-url origin https://github.com/GavinReid82/gitPractice.git
+Verify Token in Keychain:
+Since you mentioned updating your keychain, double-check that the personal access token is correctly stored in your keychain and associated with GitHub.
+
+Re-clone the Repository:
+If all else fails, sometimes re-cloning the repository with the new token can resolve any lingering issues:
+
+Backup your changes.
+Remove the current repository.
+Clone the repository again using HTTPS and your new token:
+git clone https://github.com/GavinReid82/gitPractice.git
+After following these steps, try to push your changes again:
+
+git push --set-upstream origin print_changes
