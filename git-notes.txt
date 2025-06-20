@@ -8,6 +8,9 @@ git config --global user.name "your-username"
 git config --global user.email "your-email"
 You can learn more about Git's configuration options here: https://git-scm.com/docs/git-config
 
+-- authentication
+
+gh auth login
 
 ------------------ GIT Initialization ------------------
 ------------------ local repo - offline------------------
