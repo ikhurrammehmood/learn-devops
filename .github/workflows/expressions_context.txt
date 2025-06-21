@@ -1,1 +1,10 @@
+#sometimes you need to add the metadata about the job ,,nfor about github context and runners , use env variables to reference e.g expression like echo "${{}}" to pick a surrounding metadata
 
+name : Output information
+on :workflow_dispatch
+  jobs: 
+    info:
+      runs-on: ubuntu-latest
+      steps:
+        - name: output github context
+          run: echo "${{toJSON(github)}}" ## search for github context to see diff objects available
