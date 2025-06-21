@@ -1,0 +1,2 @@
+# there are activity types and filters per events to manage when actually your scripts should run
+# example on : push to run for every push , if we need to filter for a specific branch then use activity type and filters.
