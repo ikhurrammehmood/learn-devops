@@ -1,4 +1,4 @@
-# there are activity types and filters per events to manage when actually your scripts should run
+1.# there are activity types and filters per events to manage when actually your scripts should run
 # example on : push to run for every push , if we need to filter for a specific branch then use activity type and filters.
 
 
@@ -9,7 +9,7 @@ on :
      - opened
 workflow_dispatch:
 
-# here this workflow will trigger on two events ie manuually dispatched or when a pull request is opened
+2.# here this workflow will trigger on two events ie manuually dispatched or when a pull request is opened
 
 # below is a filter on branch is applied , the WF will trigger only for the specific branches
 # apliying filter on pullrequest and push activity types
@@ -26,6 +26,25 @@ on :
         - 'feat/**' #feat/new feat/new/poc
   workflow_dispatch:
   push:
+    branches:
+      - main # main
+      - 'dev-*' #dev-main , dev-test
+      - 'feat/**' #feat/new feat/new/poc
+
+3. event filters ar enot restricted to filter only on branches , instead yo ucan filter on file paths by adding a paths: section
+name : project event x
+on :
+  pull_request:
+    types:
+     - opened
+    branches:
+        - main # main
+        - 'dev-*' #dev-main , dev-test
+        - 'feat/**' #feat/new feat/new/poc
+  workflow_dispatch:
+  push:
+    paths:
+      - '**.js' # wf will trigger on push if any file with .js extension is pushed;
     branches:
       - main # main
       - 'dev-*' #dev-main , dev-test
