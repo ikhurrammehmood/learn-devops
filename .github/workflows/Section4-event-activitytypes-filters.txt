@@ -51,3 +51,10 @@ on :
       - main # main
       - 'dev-*' #dev-main , dev-test
       - 'feat/**' #feat/new feat/new/poc
+
+
+4. Skipping the commit workflow
+
+# add a specific keyword approved by github present on their website e.g[skip ci] on push it will not trigger the worklfow that it usually does on commit
+# git add .
+# git commit -m "added comments [skip ci]"
