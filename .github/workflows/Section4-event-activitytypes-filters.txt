@@ -45,6 +45,8 @@ on :
   push:
     paths:
       - '**.js' # wf will trigger on push if any file with .js extension is pushed;
+    paths-ignore:
+      - '.github/workflows/*' # meaning it will ignore if any worfklow file is changed.
     branches:
       - main # main
       - 'dev-*' #dev-main , dev-test
