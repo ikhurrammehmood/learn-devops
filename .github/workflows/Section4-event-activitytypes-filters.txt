@@ -58,3 +58,4 @@ on :
 # add a specific keyword approved by github present on their website e.g[skip ci] on push it will not trigger the worklfow that it usually does on commit
 # git add .
 # git commit -m "added comments [skip ci]"
+# git push ## now new worflow will be triggerred on this commit
