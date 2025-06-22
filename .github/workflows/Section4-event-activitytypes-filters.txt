@@ -10,3 +10,4 @@ on :
 workflow_dispatch:
 
 # here this workflow will trigger on two events ie manyually dispatched or when a pull request is opened
+
