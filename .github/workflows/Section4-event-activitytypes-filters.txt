@@ -9,5 +9,24 @@ on :
      - opened
 workflow_dispatch:
 
-# here this workflow will trigger on two events ie manyually dispatched or when a pull request is opened
+# here this workflow will trigger on two events ie manuually dispatched or when a pull request is opened
 
+# below is a filter on branch is applied , the WF will trigger only for the specific branches
+# apliying filter on pullrequest and push activity types
+
+
+name : project event x
+on :
+  pull_request:
+    types:
+     - opened
+    branches:
+        - main # main
+        - 'dev-*' #dev-main , dev-test
+        - 'feat/**' #feat/new feat/new/poc
+  workflow_dispatch:
+  push:
+    branches:
+      - main # main
+      - 'dev-*' #dev-main , dev-test
+      - 'feat/**' #feat/new feat/new/poc
