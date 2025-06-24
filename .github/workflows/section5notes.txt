@@ -10,10 +10,10 @@ actions/download-artifact@v3
 
 runs-on: ubuntu-latest
 outputs:
-  script-file: ${{ steps.publish.outputs.scriptpath }}
+  script-file: ${{ steps.publish.outputs.scriptpath }} #here we are picking up the git hub steps context values , more details lookup gitub actions - > contexts in the documentation
 steps:
   - name: Get code
     uses: actions/checkout@v3
   - name: Publish Js filename
     id: publish
-    run: find dist/assets/*.js -type f -execdir echo 'scriptpath={}' >> $GITHUB_OUTPUT ';'
+    run: find dist/assets/*.js -type f -execdir echo 'scriptpath={}' >> $GITHUB_OUTPUT ';' # here scriptpath and script-file on line 13 are two different things
