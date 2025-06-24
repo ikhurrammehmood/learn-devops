@@ -26,5 +26,12 @@ deploy:
   needs: build
   runs-on: ubuntu-latest
  steps:
+    - name: Get artifacts
+      uses: actions/download-artifacts@v3
+      with:
+        name: some-filesfolders
+
+    - name: Output contents
+      run : ls
     - name: Output filename 
-      runs: echo ${{}}
+      runs: echo "${{needs.build.outputs.script-file}}"
