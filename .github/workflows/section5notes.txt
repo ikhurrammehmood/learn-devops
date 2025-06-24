@@ -35,3 +35,13 @@ deploy:
       run : ls
     - name: Output filename 
       runs: echo "${{needs.build.outputs.script-file}}"
+
+# caching the repetitive tasks such as installing the dependencies to avoid re running them for each job.
+# this can be done by adding a step before the step/action that we need to cache by adding the following lines
+
+steps:
+  - name: Cache dependencies
+    uses: actions/cache@v3
+  - name: install dependencies
+    run: npm ci
+
