@@ -44,6 +44,7 @@ steps:
     uses: actions/cache@v3
     with:
       path: ~/.npm    #one or multiple paths that are required to be cached , refer to the official documnetation for code samples
+      key:deps-node-modules-${{ hashFiles('**/package-lock.json')}} #here need to put some keyvalue along with some dynamic value the changes to keep the cache refresh, this key is used to call or refresh this cache. here package-lock.json part is dynamic the moment contents of this file gets changed its hash value will be changed hence the cache will be refreshed.
   - name: install dependencies
     run: npm ci
 
