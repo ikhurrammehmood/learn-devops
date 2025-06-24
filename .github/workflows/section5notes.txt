@@ -7,3 +7,11 @@ actions/download-artifact@v3
 
 # jobs also product output insted of artificats example , generates values which is important to be passed on to another job or further processing like date values , filenames etc.
 # these are called as job outputs
+
+runs-on: ubuntu-latest
+outputs:
+  script-file: ${{ steps.publish.outputs.script-file }}
+steps:
+  - name: Get code
+    uses: actions/checkout@v3
+  - name: Publish Js filename
