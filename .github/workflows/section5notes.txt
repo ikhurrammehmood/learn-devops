@@ -42,6 +42,8 @@ deploy:
 steps:
   - name: Cache dependencies
     uses: actions/cache@v3
+    with:
+      path: ~/.npm    #one or multiple paths that are required to be cached , refer to the official documnetation for code samples
   - name: install dependencies
     run: npm ci
 
