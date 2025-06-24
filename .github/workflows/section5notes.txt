@@ -15,5 +15,5 @@ steps:
   - name: Get code
     uses: actions/checkout@v3
   - name: Publish Js filename
-    id: publish
+    id: publish # here we are giving a unique id to our step here to be called in the line 13
     run: find dist/assets/*.js -type f -execdir echo 'scriptpath={}' >> $GITHUB_OUTPUT ';' # here scriptpath and script-file on line 13 are two different things
