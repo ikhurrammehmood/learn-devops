@@ -10,7 +10,7 @@ actions/download-artifact@v3
 
 runs-on: ubuntu-latest
 outputs:
-  script-file: ${{ steps.publish.outputs.script-file }}
+  script-file: ${{ steps.publish.outputs.scriptpath }}
 steps:
   - name: Get code
     uses: actions/checkout@v3
