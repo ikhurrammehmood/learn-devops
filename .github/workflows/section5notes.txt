@@ -16,4 +16,5 @@ steps:
     uses: actions/checkout@v3
   - name: Publish Js filename
     id: publish # here we are giving a unique id to our step here to be called in the line 13
-    run: find dist/assets/*.js -type f -execdir echo 'scriptpath={}' >> $GITHUB_OUTPUT ';' # here scriptpath and script-file on line 13 are two different things
+    run: find dist/assets/*.js -type f -execdir echo 'scriptpath={}' >> $GITHUB_OUTPUT ';' # here scriptpath and script-file on line 13 are two different things 
+# old ways of writing line 13 is with :: but this is going to be obselete very soon
