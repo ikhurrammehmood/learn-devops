@@ -17,3 +17,7 @@ env:
 jobs:
   jobnumber_1:
   runs-on:ubuntu
+
+## referencing a variable
+
+${{env.DB_NAME}}
