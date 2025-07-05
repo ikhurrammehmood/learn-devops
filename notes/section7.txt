@@ -1,1 +1,3 @@
-
+## Conditional workflow and job execution 
+## if condition ; to run something when a condition is satisfied
+## continue-on-error flag to to ignore errors
