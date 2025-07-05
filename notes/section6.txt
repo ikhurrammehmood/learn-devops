@@ -1,0 +1,19 @@
+creating environment variables
+
+repo level
+workflow level
+job level
+or even at a step level
+
+example:
+
+name: using env variables
+
+on: 
+  workflow_dispatch
+env:
+  DB_NAME: SQLSERVER123
+
+jobs:
+  jobnumber_1:
+  runs-on:ubuntu
