@@ -26,3 +26,18 @@
   with:
     name:test-report
     path:test.json
+
+# matrix job strategy 
+# this is used to run same job on multiple configurations e.g linux and windows etc
+# example code 
+
+jobs:
+   build: 
+    continue-on-error:true
+    strategy:
+        matrix:
+        node-version:[12 , 14, 16]
+        operating-system:[ubuntu-latest,windows-latest]
+    runs-on: ${{matrix.operating-system}}
+    steps:
+        
