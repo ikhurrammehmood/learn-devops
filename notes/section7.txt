@@ -66,4 +66,5 @@ steps:
 -name: output information
 run: echo 'this is an output'
 
+# whereever we want to call this workflow, we can do it by adding a uses keyword and put ./.github/workflows/filename.yml
 
