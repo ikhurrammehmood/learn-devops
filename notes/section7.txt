@@ -1,6 +1,6 @@
 ## Conditional workflow and job execution 
 ## if condition ; to run something when a condition is satisfied
-## continue-on-error flag to to ignore errors
+## continue-on-error flag to to ignore errors , mark that step forcibly as completed and continue to next ones.
     - name: <some step name>
       continue-on-error: true
       id: runtesting
@@ -21,7 +21,7 @@
   run:npm run test
 
 - name: testreport
-  if: failure() && steps.run-testing.outcome=='failure'
+  if: failure() && steps.run-testing.outcome=='failure' -- here onyl this step will run not the next ones based on the conditions
   uses: action/upload-artifact@v3
   with:
     name:test-report
