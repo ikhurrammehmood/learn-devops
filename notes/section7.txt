@@ -1,3 +1,24 @@
 ## Conditional workflow and job execution 
 ## if condition ; to run something when a condition is satisfied
 ## continue-on-error flag to to ignore errors
+
+
+## built in functions for conditional logic are 
+# failure() returns true if any step or job fails above
+# success() returns true if everything before was sucessfull
+# always() makes a step to alsways run even if its cancelled or previous ones are failed
+# cancelled() retrurns true if the wf has been cancelled
+
+
+# these can also be used in conjuction with other if conditons e.g
+#
+- name: dependency_test
+  id: run-testing
+  run:npm run test
+
+- name: testreport
+  if: failure() && steps.run-testing.outcome=='failure'
+  uses: action/upload-artifact@v3
+  with:
+    name:test-report
+    path:test.json
