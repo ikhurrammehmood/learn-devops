@@ -56,3 +56,14 @@ jobs:
     runs-on: ${{matrix.operating-system}}
 
 ## Reusable workflow ; calling a workflow inside a job of another workflow.
+
+name: useable wokflow
+on: workflow_call
+Jobs:
+ deploy:
+runs-on:ubuntu-latest
+steps:
+-name: output information
+run: echo 'this is an output'
+
+
