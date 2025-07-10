@@ -1,0 +1,8 @@
+#adding containers into your github workflow
+jobs:
+  test:
+    environment: testing
+    runs-on:ubuntu-test
+    container:
+    image:node:16 #using predefined image that has a node version 16 pre-installed
+    
