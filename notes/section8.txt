@@ -4,5 +4,9 @@ jobs:
     environment: testing
     runs-on:ubuntu-test
     container:
-    image:node:16 #using predefined image that has a node version 16 pre-installed
+    image:node:16 --using predefined image that has a node version 16 pre-installed  learn more about dockerhub
+    env:
+    VARIABLE1:<some env variable value>
+steps:
+-name: step1
     
