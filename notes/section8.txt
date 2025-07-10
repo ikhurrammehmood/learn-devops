@@ -27,6 +27,8 @@ jobs:
       mongodb-service1:
         image:mongo #official image from dockerhub
         env:
+          username:
+          pwd:
 
     
 steps:
