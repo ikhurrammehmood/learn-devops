@@ -21,7 +21,11 @@ jobs:
     container:
     image:node:16 --using predefined image that has a node version 16 pre-installed  learn more about dockerhub
     env:
-      VARIABLE1:<some env variable value>
+      MONGODB_CONNECTION_PROTOCOL:mongodb+srv
+      MONGODB_CLUSTER_ADDRESS:  cluster0.amazonnetwork.abcregion.mongodb.net
+      MONGODB_ROOT_USERNAME:root
+      MONGODB_ROOT_PASSWORD:abc123
+      PORT:8080
 
     services:
       mongodb-service1:
@@ -29,8 +33,33 @@ jobs:
         env:
           username:
           pwd:
-
-    
+   
 steps:
 -name: step1
-    
+
+
+######################################################################################
+## communication bw jobs and container service
+## when job is running in a container
+
+jobs:
+  test:
+    environment: testing
+    runs-on:ubuntu-test
+    container:
+    image:node:16 --using predefined image that has a node version 16 pre-installed  learn more about dockerhub
+    env:
+      MONGODB_CONNECTION_PROTOCOL:mongodb
+      MONGODB_CLUSTER_ADDRESS:  
+      MONGODB_ROOT_USERNAME:root
+      MONGODB_ROOT_PASSWORD:abc123
+      PORT:8080
+    services:
+      mongodb:
+        image:mongo #official image from dockerhub
+        env:
+          root_username:<username>
+          root_pwd:<password>
+   
+steps:
+-name: step1
