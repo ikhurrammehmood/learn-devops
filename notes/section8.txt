@@ -10,3 +10,25 @@ jobs:
 steps:
 -name: step1
     
+######################################################################################
+## adding service containers for a job
+## e.g we want to have a container image that has a test db host used only during test execution etc
+
+jobs:
+  test:
+    environment: testing
+    runs-on:ubuntu-test
+    container:
+    image:node:16 --using predefined image that has a node version 16 pre-installed  learn more about dockerhub
+    env:
+      VARIABLE1:<some env variable value>
+
+    services:
+      mongodb-service1:
+        image:mongo #official image from dockerhub
+        env:
+
+    
+steps:
+-name: step1
+    
