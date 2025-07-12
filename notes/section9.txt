@@ -21,7 +21,9 @@ No new programming language knowledge is required.
 
 Refer to the syntaxt definition on the official githib documentation
 
-Example : 
+Example : Creating a new custom action
+- Create a subfolder in your project to store local custom actions or else you wanna create and refer to the standalone repos.
+  FOLDER - actions/cache-deps/actions.yml
 
 Need only one file : actions.yml
 
@@ -41,8 +43,10 @@ runs:
       run: npm ci
       shell: bash
 
+Example: calling / using your above created custom actions will be like any regulare steps in your Workflow
 
-      
-      
+- Workflow name Deploy.yml
 
-
+steps:
+ - name: Install dependencies
+   uses: ./.github/actions/cache-deps
