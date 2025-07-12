@@ -172,3 +172,34 @@ steps:
    with:
     caching:false
 
+
+Example : Adding Output variables to custom composite actions
+- Go back to your action.yml file and add this code
+
+name: 'Get and Cache dependencies'
+description: 'Get the dependenceis (via npm) and cache them'
+inputs:
+  caching:
+    description:'inputs to caching'
+    required: false
+    default: 'true'
+outputs:
+  used-cache:
+    description: 'flag if the cache is used or not'
+    value: ${{steps.install}}
+  
+runs:
+  using: 'composite'
+  steps:
+    - name: Cache dependencies
+      if: inputs.caching == true
+      id: cache
+      uses: actions/cache@v3
+      with:
+        path: node_modules
+        key:deps-note-modules-${{ hashFiles('')}}
+    - name: Install dependencies
+      id: install
+      if:steps.cache.outputs.cache-hit != 'true' || inputs.caching != 'true'
+      run: npm ci
+      shell: bash
