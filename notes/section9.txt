@@ -19,5 +19,22 @@ There are three type of custom actions
 Combination of run and uses commands that you already know from standard github actions are used.
 No new programming language knowledge is required.
 
+Refer to the syntaxt definition on the official githib documentation
+
+Example : 
+
 Need only one file : actions.yml
+
+name: 'Get and Cache dependencies'
+description: 'Get the dependenceis (via npm) and cache them'
+runs:
+  using: 'composite'
+  steps:
+    - name: Cache dependencies
+      id: cache
+      uses: actions/cache@v3
+      with:
+        path: node_modules
+        key:deps-note-modules-${{ hashFiles('')}}
+
 
