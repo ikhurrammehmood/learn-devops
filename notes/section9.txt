@@ -2,3 +2,8 @@
 # why to create beself when there are heaps already in the marketplace for free ?
 # Ans : you might want to simpify in your worklfow based on your own logic. This gives you more control on such actions for example publically available actions
 requires to hadnle you workflow in multiple steps while your custom actions can do all that in a single go. contribute to the community.
+
+There are three type of custom actions 
+1.Javascript based
+2.Docker based
+3.Composte (mix of custom)
