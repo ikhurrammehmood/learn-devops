@@ -163,14 +163,6 @@ runs:
       run: npm ci
       shell: bash
 
-Example: Passing input variables value in the workflow to control different behaviiour for different steps
-- Workflow name Deploy.yml
-
-steps:
- - name: Install dependencies
-   uses: ./.github/actions/cache-deps
-   with:
-    caching:false
 
 
 Example : Adding Output variables to custom composite actions
@@ -206,3 +198,17 @@ runs:
           echo "cache='${{inputs.caching}}'" >> $GIT_HUB_OUTPUT
 
       shell: bash
+
+Example: Passing input and output variables value in the workflow to control different behaviiour for different steps
+- Workflow name Deploy.yml
+
+steps:
+ - name: Install dependencies
+  id :cache-deps
+   uses: ./.github/actions/cache-deps
+   with:
+    caching:false
+ - name: Output Information
+   run: echo 'cache used? ${{steps.cache-decps.outputs.used-cache}}'
+   with:
+    caching:false
