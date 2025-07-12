@@ -36,5 +36,13 @@ runs:
       with:
         path: node_modules
         key:deps-note-modules-${{ hashFiles('')}}
+    - name: Install dependencies
+      if:steps.cache.outputs.cache-hit != 'true'
+      run: npm ci
+      shell: bash
+
+
+      
+      
 
 
