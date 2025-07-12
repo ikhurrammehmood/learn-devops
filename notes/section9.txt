@@ -83,3 +83,92 @@ steps:
    uses: ./.github/actions/cache-deps
    with:
     caching:false
+
+Example: like inputs you can add outputs to the workflows using composite custom actions
+
+# CREATING CUSTOM GITHUB ACTIONS
+---------------------------------
+# why to create beself when there are heaps already in the marketplace for free ?
+# Ans : you might want to simpify in your worklfow based on your own logic. This gives you more control on such actions for example publically available actions
+requires to hadnle you workflow in multiple steps while your custom actions can do all that in a single go. contribute to the community.
+
+There are three type of custom actions 
+1.Javascript based 
+  executes a js file 
+  using nodejs or anyother package
+  dependency on JS expertise
+2.Docker based
+  If you don't know JS then you use this option.
+  Use any Programming language and use any base environment using a docker file.
+  Provides greate flexibility.
+
+3.Composte (mix of custom)
+  Dont write code instead use existing workflow steps and combine them to one action as composite achieve certain outcomes.
+Combination of run and uses commands that you already know from standard github actions are used.
+No new programming language knowledge is required.
+
+Refer to the syntaxt definition on the official githib documentation
+
+Example : Creating a new custom action
+- Create a subfolder in your project to store local custom actions or else you wanna create and refer to the standalone repos.
+  FOLDER - actions/cache-deps/actions.yml
+
+Need only one file : actions.yml
+
+name: 'Get and Cache dependencies'
+description: 'Get the dependenceis (via npm) and cache them'
+runs:
+  using: 'composite'
+  steps:
+    - name: Cache dependencies
+      id: cache
+      uses: actions/cache@v3
+      with:
+        path: node_modules
+        key:deps-note-modules-${{ hashFiles('')}}
+    - name: Install dependencies
+      if:steps.cache.outputs.cache-hit != 'true'
+      run: npm ci
+      shell: bash
+
+Example: calling / using your above created custom actions will be like any regulare steps in your Workflow
+- Workflow name Deploy.yml
+
+steps:
+ - name: Install dependencies
+   uses: ./.github/actions/cache-deps
+
+Example : Adding Input variables to custom composite actions
+- Go back to your action.yml file and add this code
+
+name: 'Get and Cache dependencies'
+description: 'Get the dependenceis (via npm) and cache them'
+inputs:
+  caching:
+    description:'inputs to caching'
+    required: false
+    default: 'true'
+runs:
+  using: 'composite'
+  steps:
+    - name: Cache dependencies
+      if: inputs.caching == true
+      id: cache
+      uses: actions/cache@v3
+      with:
+        path: node_modules
+        key:deps-note-modules-${{ hashFiles('')}}
+    - name: Install dependencies
+      if:steps.cache.outputs.cache-hit != 'true' || inputs.caching != 'true'
+      run: npm ci
+      shell: bash
+
+Example: Passing input variables value in the workflow to control different behaviiour for different steps
+- Workflow name Deploy.yml
+
+steps:
+ - name: Install dependencies
+   uses: ./.github/actions/cache-deps
+   with:
+    caching:false
+
