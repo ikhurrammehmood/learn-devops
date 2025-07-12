@@ -9,9 +9,14 @@ There are three type of custom actions
   using nodejs or anyother package
   dependency on JS expertise
 2.Docker based
-  If you don't know JS then you use this option
+  If you don't know JS then you use this option.
+  Use any Programming language and use any base environment using a docker file.
+  Provides greate flexibility.
 
 3.Composte (mix of custom)
+  Dont write code instead use existing workflow steps and combine them to one action as composite achieve certain outcomes.
+Combination of run and uses commands that you already know from standard github actions are used.
+No new programming language knowledge is required.
 
 
 
