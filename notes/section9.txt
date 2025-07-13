@@ -5,7 +5,7 @@
 requires to hadnle you workflow in multiple steps while your custom actions can do all that in a single go. contribute to the community.
 
 There are three type of custom actions 
-1.Javascript based 
+1.Javascript based # SKIPPED SECTION'S CODE AS NOT MY PREFERRED OPTION
   executes a js file 
   using nodejs or anyother package
   dependency on JS expertise
