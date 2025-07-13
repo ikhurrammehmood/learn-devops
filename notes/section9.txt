@@ -35,6 +35,10 @@ Example:
 - requirements.txt file that mentions the required binaries or packages.
 - can use python script deployment.py for the logic
 - Refer to the github documentaton or sample code in the udemy video
+-KEY Note:
+Input and Output code for the action.yaml file is same for bothe docker and JS custom actions
+except the using:'docker'
+
 --------------------------------------------------------------------------------------------------------------------------------------------------------
 3.Composte (mix of custom)
   Dont write code instead use existing workflow steps and combine them to one action as composite achieve certain outcomes.
