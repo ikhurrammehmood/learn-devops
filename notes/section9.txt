@@ -11,19 +11,16 @@ There are three type of custom actions
   dependency on JS expertise
 
 Example:
+ Create a subfolder in your project to store local custom actions or else you wanna create and refer to the standalone repos.
+  FOLDER - actions/deploy-s3/actions.yml
 - Add action.yaml file
+- Add a JS file e.g main.js
 
 name: 'Deploy to AWS s3'
 description: 'deploy static website to aws s3'
 runs:
   using: 'node16' # check git hub documentation for the latest version'
-  steps:
-    - name: Cache dependencies
-      id: cache
-      uses: actions/cache@v3
-      with:
-        path: node_modules
-        key:deps-note-modules-${{ hashFiles('')}}
+  main: 'main.js'
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------
 2.Docker based
