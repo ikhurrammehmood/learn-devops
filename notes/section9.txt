@@ -32,6 +32,7 @@ runs:
 
 Example:
 - REQUIRED to Add a docker file
+- requirements.txt file that mentions the required binaries or packages.
 - can use python script deployment.py for the logic
 - Refer to the github documentaton or sample code in the udemy video
 --------------------------------------------------------------------------------------------------------------------------------------------------------
