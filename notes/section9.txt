@@ -11,6 +11,19 @@ There are three type of custom actions
   dependency on JS expertise
 
 Example:
+- Add action.yaml file
+
+name: 'Deploy to AWS s3'
+description: 'deploy static website to aws s3'
+runs:
+  using: 'node16' # check git hub documentation for the latest version'
+  steps:
+    - name: Cache dependencies
+      id: cache
+      uses: actions/cache@v3
+      with:
+        path: node_modules
+        key:deps-note-modules-${{ hashFiles('')}}
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------
 2.Docker based
