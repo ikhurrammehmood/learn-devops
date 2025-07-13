@@ -29,6 +29,9 @@ runs:
   If you don't know JS then you use this option.
   Use any Programming language and use any base environment using a docker file.
   Provides greate flexibility.
+
+Example:
+- REQUIRED to Add a docker file
 --------------------------------------------------------------------------------------------------------------------------------------------------------
 3.Composte (mix of custom)
   Dont write code instead use existing workflow steps and combine them to one action as composite achieve certain outcomes.
