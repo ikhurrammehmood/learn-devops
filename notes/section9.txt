@@ -20,7 +20,9 @@ name: 'Deploy to AWS s3'
 description: 'deploy static website to aws s3'
 runs:
   using: 'node16' # check git hub documentation for the latest version'
+  pre:          #if any pre script needs to run before main
   main: 'main.js'
+  post:         #if any post script needs to run after main
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------
 2.Docker based
