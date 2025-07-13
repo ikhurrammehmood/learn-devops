@@ -39,6 +39,11 @@ Example:
 Input and Output code for the action.yaml file is same for bothe docker and JS custom actions
 except the using:'docker'
 
+The input/output variables defined in the action.yml for docker , github generates the environment variables with the same name
+and INPUT_ as prefix  for e.g. input variable bucket - > INPUT_BUCKET that you can use in your python code.
+
+bucket = os.environ['INPUT_BUCKET']
+
 --------------------------------------------------------------------------------------------------------------------------------------------------------
 3.Composte (mix of custom)
   Dont write code instead use existing workflow steps and combine them to one action as composite achieve certain outcomes.
