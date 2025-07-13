@@ -1,7 +1,7 @@
 #actions are used to install project dependencies , libararies , packages , code etc.
 
 name: Test project
-on: push
+#on: push
 jobs:
   test:
     runs-on:ubuntu-latest
